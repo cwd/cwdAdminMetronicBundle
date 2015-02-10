@@ -1,0 +1,35 @@
+{
+  "name": "cwd/adminmetronic-bundle",
+  "version": "3.6.2",
+  "description": "",
+  "keywords": ["symfony", "admin", "bundle"],
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ludwig Ruderstaller",
+      "email": "lr@cwd.at",
+      "homepage": "http://www.cwd.at"
+    },
+    {
+      "name": "KeenThemes - Metronic",
+      "email": "support@keenthemes.com",
+      "homepage": "http://www.keenthemes.com/"
+    }
+  ],
+  "require": {
+    "php": ">=5.3",
+    "symfony/framework-bundle": ">2.3.0",
+    "symfony/symfony": "2.*",
+    "braincrafted/bootstrap-bundle": "dev-develop",
+    "genemu/form-bundle": "2.2.*",
+    "ali/datatable": "dev-master",
+    "cwd/generic-bundle": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "Cwd\\Admin\\MetronicBundle": ""
+    }
+  },
+  "target-dir": "Cwd/Admin/MetronicBundle"
+}

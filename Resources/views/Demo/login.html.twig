@@ -1,0 +1,32 @@
+{% extends 'CwdAdminMetronicBundle:Layout:login.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/bundles/dpaneladmin/css/theme.css') }}" />
+{% endblock %}
+
+{% block logo %}
+    <img src="{{ '/bundles/cwdadminmetronic/cwd.png' }}" />
+{% endblock %}
+
+{% block footer %}
+    &copy;2015 Copyright - {{ "All Rights Reserved"|trans }} by<br /><a class="font-grey-steel" href="http://www.cwd.at" target="_blank">CWD - Customized Web Development</a>
+{% endblock %}
+
+{% block formaction %}{{ "" }}{% endblock %}
+
+{% block lostpassword %}
+{% endblock %}
+
+{% block createaccount %}
+{% endblock %}
+
+{% block sociallogin %}
+{% endblock %}
+
+{% block sectionLostpassword %}
+{% endblock %}
+
+{% block sectionRegister %}
+{% endblock %}
+
+{% block title %}DEMO{% endblock %}
