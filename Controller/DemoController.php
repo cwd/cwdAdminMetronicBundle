@@ -32,4 +32,15 @@ class DemoController extends Controller
     {
         return array();
     }
+
+    /**
+     *
+     * @Route("/dashboard")
+     * @Template()
+     * @return array()
+     */
+    public function dashboardAction()
+    {
+        return array();
+    }
 }

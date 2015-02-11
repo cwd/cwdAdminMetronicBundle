@@ -1,0 +1,168 @@
+{% extends 'CwdAdminMetronicBundle:Layout:admin4.html.twig' %}
+{% set defaultColor = 'blue-hoki' %}
+
+{% block sectionMeta %}
+    <meta content="Demo Dashboard" name="description"/>
+    <meta content="Ludwig Ruderstaller <lr@cwd.at>" name="author"/>
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('/bundles/dpaneladmin/css/theme.css') }}" />
+{% endblock %}
+
+{% block logo %}
+    <img src="{{ '/bundles/cwdadminmetronic/cwd.png' }}" class="logo-default" style="margin-top:7px" />
+{% endblock %}
+
+{% block pageactionSection %}
+{% endblock %}
+
+{% block searchSection %}
+{% endblock %}
+
+{% block pageToolbarSection %}
+{% endblock %}
+
+{% block topmenuSection %}
+<ul class="nav navbar-nav pull-right">
+    <li class="dropdown dropdown-user dropdown-dark">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+						<span class="username username-hide-on-mobile">Max Mustermann </span>
+            <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
+            <img alt="" class="img-circle" src="/bundles/cwdadminmetronic/assets/admin/layout4/img/avatar9.jpg" />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-default">
+            <li>
+                <a href=""><i class="icon-user"></i> {{ "Profile"|trans }} </a>
+            </li>
+            <li class="divider">
+            </li>
+            <li>
+                <a href="login.html">
+                    <i class="icon-key"></i> {{ "Logout"|trans }} </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
+
+{% block breadcrumbSection %}
+{% endblock %}
+
+{% block pageTitle %}
+<h1>MyTitle</h1>
+{% endblock %}
+
+{#
+{% block menuSection %}
+{% endblock %}
+#}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            {% embed "#{Helper}:portlet.html.twig" with {'title': 'foobar', 'icon': 'fa-user', 'type':'solid'} %}
+                {% block body %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.
+                {% endblock %}
+            {% endembed %}
+
+            {% embed "#{Helper}:portlet.html.twig" with {'title': 'barfoo', 'color':'purple', 'type':'solid'} %}
+                {% block actions %}
+                {% endblock %}
+                {% block tabs %}
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="#portlet_tab_3" data-toggle="tab">
+                                Tab 3 </a>
+                        </li>
+                        <li>
+                            <a href="#portlet_tab_2" data-toggle="tab">
+                                Tab 2 </a>
+                        </li>
+                        <li class="active">
+                            <a href="#portlet_tab_1" data-toggle="tab">
+                                Tab 1 </a>
+                        </li>
+                    </ul>
+                {% endblock %}
+                {% block body %}
+                    <div class="tab-content">
+                        <div class="tab-pane" id="portlet_tab_1">
+                            <p>
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna.
+                            </p>
+                        </div>
+                        <div class="tab-pane" id="portlet_tab_2">
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.
+                            </p>
+                        </div>
+                        <div class="tab-pane active" id="portlet_tab_3">
+                            <p>
+                                Ut wisi enim ad btn-smm veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                            </p>
+                        </div>
+                    </div>
+                {% endblock %}
+            {% endembed %}
+        </div>
+
+        <div class="col-md-6">
+            {% embed "#{Helper}:portlet.html.twig" with {'title': 'barfoo'} %}
+                {% block body %}
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.
+                {% endblock %}
+            {% endembed %}
+
+            {% embed "#{Helper}:portlet.html.twig" with {'title': 'barfoo', 'color':'purple'} %}
+                {% block actions %}
+                {% endblock %}
+                {% block tabs %}
+                    <ul class="nav nav-tabs">
+                        <li>
+                            <a href="#portlet_tab_4" data-toggle="tab">
+                                Tab 3 </a>
+                        </li>
+                        <li>
+                            <a href="#portlet_tab_5" data-toggle="tab">
+                                Tab 2 </a>
+                        </li>
+                        <li class="active">
+                            <a href="#portlet_tab_6" data-toggle="tab">
+                                Tab 1 </a>
+                        </li>
+                    </ul>
+                {% endblock %}
+                {% block body %}
+                    <div class="tab-content">
+                        <div class="tab-pane" id="portlet_tab_4">
+                            <p>
+                                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.ut laoreet dolore magna ut laoreet dolore magna. ut laoreet dolore magna. ut laoreet dolore magna.
+                            </p>
+                        </div>
+                        <div class="tab-pane" id="portlet_tab_5">
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo.
+                            </p>
+                        </div>
+                        <div class="tab-pane active" id="portlet_tab_6">
+                            <p>
+                                Ut wisi enim ad btn-smm veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                            </p>
+                        </div>
+                    </div>
+                {% endblock %}
+            {% endembed %}
+        </div>
+    </div>
+
+    {{ parent() }}
+{% endblock %}
+
+{% block javascriptSection %}
+    toastr.warning("Notice", "FOOBAR");
+{% endblock %}
+{% block sectionCopyright %}
+    &copy;2015 Copyright - {{ "All Rights Reserved"|trans }} by <a class="" href="http://www.cwd.at" target="_blank">CWD - Customized Web Development</a>
+{% endblock %}

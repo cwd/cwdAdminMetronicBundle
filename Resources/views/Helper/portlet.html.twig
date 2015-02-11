@@ -1,0 +1,47 @@
+<div class="portlet {{ type|default('box') }} {{ color|default(themeColor) }} {{ sortable|default(false) ? 'portlet-sortable ui-sortable-handle' : '' }}">
+    {% block header %}
+        <div class="portlet-title">
+            <div class="caption">
+                {% block title %}
+                <i class="fa {{ icon|default('fa-gift') }}"></i>{{ title|default('Title') }}
+                {% endblock %}
+            </div>
+            {% block tabs %}
+                {#
+                <ul class="nav nav-tabs">
+                    <li>
+                        <a href="#portlet_tab_3" data-toggle="tab">
+                            Tab 3 </a>
+                    </li>
+                    <li>
+                        <a href="#portlet_tab_2" data-toggle="tab">
+                            Tab 2 </a>
+                    </li>
+                    <li class="active">
+                        <a href="#portlet_tab_1" data-toggle="tab">
+                            Tab 1 </a>
+                    </li>
+                </ul>
+            #}
+            {% endblock %}
+            <div class="actions">
+                {% block actions %}
+                    <a href="#" class="btn btn-default btn-sm">
+                        <i class="fa fa-pencil"></i> Edit </a>
+                    <a href="#" class="btn btn-default btn-sm">
+                        <i class="fa fa-plus"></i> Add </a>
+                    <a class="btn btn-icon-only btn-default btn-sm fullscreen" href="#" data-original-title="" title="">
+                    </a>
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+    <div class="portlet-body">
+        {% block body %}
+            {#
+            <strong>Scroll is hidden</strong><br>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.
+            #}
+        {% endblock %}
+    </div>
+</div>
