@@ -23,26 +23,27 @@
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
 
     {% stylesheets
-    'bundles/cwdadminmetronic/assets/global/plugins/font-awesome/css/font-awesome.min.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap/css/bootstrap.min.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/uniform/css/uniform.default.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-toastr/toastr.min.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/jqvmap.css'
-    'bundles/cwdadminmetronic/assets/global/plugins/morris/morris.css'
-    'bundles/cwdadminmetronic/assets/admin/pages/css/tasks.css'
-    'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
-    'bundles/cwdadminmetronic/assets/global/css/plugins.css'
-    'bundles/cwdadminmetronic/assets/admin/layout4/css/layout.css'
-    'bundles/cwdadminmetronic/assets/admin/layout4/css/themes/default.css'
-    'bundles/cwdadminmetronic/custom.css'
-    filter='cssrewrite'
+        'bundles/cwdadminmetronic/assets/global/plugins/font-awesome/css/font-awesome.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap/css/bootstrap.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/uniform/css/uniform.default.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-toastr/toastr.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/jqvmap.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/morris/morris.css'
+        'bundles/cwdadminmetronic/assets/admin/pages/css/tasks.css'
+        'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
+        'bundles/cwdadminmetronic/assets/global/css/plugins.css'
+        'bundles/cwdadminmetronic/assets/admin/layout4/css/layout.css'
+        'bundles/cwdadminmetronic/custom.css'
+        filter='cssrewrite'
     %}
     <link rel="stylesheet" href="{{  asset_url }}" />
     {% endstylesheets %}
+    <link rel="stylesheet" href="{{ asset("bundles/cwdadminmetronic/assets/admin/layout4/css/themes/#{ themeStyle|default('default') }.css") }}" />
+
     {% block stylesheets %}{% endblock %}
     <link rel="shortcut icon" href="favicon.ico"/>
 </head>
