@@ -1,3 +1,4 @@
+{% set themeColor = defaultColor|default('blue-hoki') %}
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
@@ -25,12 +26,12 @@
     'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
     'bundles/cwdadminmetronic/assets/global/css/plugins.css'
     'bundles/cwdadminmetronic/assets/admin/layout/css/layout.css'
-    'bundles/cwdadminmetronic/assets/admin/layout/css/themes/default.css'
     'bundles/cwdadminmetronic/assets/admin/layout/css/custom.css'
     filter='cssrewrite'
     %}
     <link rel="stylesheet" href="{{  asset_url }}" />
     {% endstylesheets %}
+    <link rel="stylesheet" href="{{ asset("bundles/cwdadminmetronic/assets/admin/layout4/css/themes/#{ themeStyle|default('default') }.css") }}" />
 
     {% block stylesheets %}{% endblock %}
 
@@ -50,23 +51,23 @@
 </div>
 
 <div class="content">
-    <form class="login-form" action="{% block formaction %}{% endblock %}" method="post">
+    <form class="login-form" action="{{ path("auth_security_check") }}" method="post">
         <h3 class="font-blue-hoki">{{ "Sign In"|trans }}</h3>
-        <div class="alert alert-danger display-hide">
-            <button class="close" data-close="alert"></button>
-			<span>
-			Enter any username and password. </span>
+        {% if error %}
+            <div class="alert alert-danger">
+                <span>{{ error.message|trans }}</span>
+            </div>
+        {% endif %}
+        <div class="form-group">
+            <label class="control-label visible-ie8 visible-ie9">{{ "Username"|trans }}</label>
+            <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="{{ "Username"|trans }}" name="_username"/>
         </div>
         <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Username</label>
-            <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username"/>
-        </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Password</label>
-            <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"/>
+            <label class="control-label visible-ie8 visible-ie9">{{ "Password"|trans }}</label>
+            <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="{{ "Password"|trans }}" name="_password"/>
         </div>
         <div class="form-actions">
-            <button type="submit" class="btn btn-success uppercase blue-hoki">Login</button>
+            <button type="submit" class="btn btn-success uppercase {{ themeColor }}">{{ "Login"|trans }}</button>
             {% block lostpassword %}<a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>{% endblock %}
         </div>
         {% block sociallogin %}
