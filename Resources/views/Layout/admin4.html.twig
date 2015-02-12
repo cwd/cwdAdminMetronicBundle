@@ -33,6 +33,10 @@
         'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/jqvmap.css'
         'bundles/cwdadminmetronic/assets/global/plugins/morris/morris.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/select2/select2.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'
         'bundles/cwdadminmetronic/assets/admin/pages/css/tasks.css'
         'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
         'bundles/cwdadminmetronic/assets/global/css/plugins.css'
@@ -46,6 +50,7 @@
 
     {% block stylesheets %}{% endblock %}
     <link rel="shortcut icon" href="favicon.ico"/>
+    <script src="/bundles/cwdadminmetronic/assets/global/plugins/jquery.min.js"></script>
 </head>
 <body class="page-header-fixed page-sidebar-closed-hide-logo">
 
@@ -2711,7 +2716,6 @@
 <![endif]-->
 
 {% javascripts
-    'bundles/cwdadminmetronic/assets/global/plugins/jquery.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/jquery-migrate.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/jquery-ui/jquery-ui.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap/js/bootstrap.min.js'
@@ -2732,6 +2736,13 @@
     'bundles/cwdadminmetronic/assets/global/plugins/morris/morris.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/morris/raphael-min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/jquery.sparkline.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/select2/select2.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'
+
     'bundles/cwdadminmetronic/assets/global/scripts/metronic.js'
     'bundles/cwdadminmetronic/assets/admin/layout4/scripts/layout.js'
     'bundles/cwdadminmetronic/assets/admin/layout4/scripts/demo.js'
@@ -2746,8 +2757,8 @@
     jQuery(document).ready(function() {
         Metronic.init();
         Layout.init();
-        Demo.init();
-        Index.init();
+        //Demo.init();
+        //Index.init();
         Tasks.initDashboardWidget();
         PortletDraggable.init();
 

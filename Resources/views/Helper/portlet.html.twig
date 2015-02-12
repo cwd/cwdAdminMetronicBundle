@@ -3,7 +3,7 @@
         <div class="portlet-title">
             <div class="caption">
                 {% block title %}
-                <i class="fa {{ icon|default('fa-gift') }}"></i>{{ title|default('Title') }}
+                <i class="fa {{ icon|default('fa-gift') }}"></i>{{ title|trans|default('Title') }}
                 {% endblock %}
             </div>
             {% block tabs %}
@@ -26,10 +26,6 @@
             {% endblock %}
             <div class="actions">
                 {% block actions %}
-                    <a href="#" class="btn btn-default btn-sm">
-                        <i class="fa fa-pencil"></i> Edit </a>
-                    <a href="#" class="btn btn-default btn-sm">
-                        <i class="fa fa-plus"></i> Add </a>
                     <a class="btn btn-icon-only btn-default btn-sm fullscreen" href="#" data-original-title="" title="">
                     </a>
                 {% endblock %}
