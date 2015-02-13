@@ -14,3 +14,7 @@ ul.bc-collection .row {
 ul.bc-collection div.row div.form-inline {
     margin-top:5px;
 }
+
+.table .btn-group .btn {
+    margin-right:0;
+}

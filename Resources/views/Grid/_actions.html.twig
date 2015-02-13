@@ -1,4 +1,4 @@
-<div class="btn-group">
-    {%  if edit_route is defined and edit_route is not empty %}<a href="{{ path(edit_route,{'id':dt_item}) }}" class="btn btn-primary btn-xs" title="Ändern"><i class="fa fa-edit"></i></a>{% endif %}
-    {%  if delete_route is defined and delete_route is not empty %}<a href="{{ path(delete_route,{'id':dt_item}) }}" class="btn btn-danger btn-xs deleterow" title="Löschen"><i class="fa fa-trash-o"></i></a>{% endif %}
+<div class="btn-group btn-group-solid">
+    {%  if edit_route is defined and edit_route is not empty %}<a href="{{ path(edit_route,{'id':dt_item}) }}" class="btn btn-primary btn-xs tooltips" data-placement="top" data-container="body" data-original-title="{{ "Change"|trans }}"><i class="fa fa-edit"></i></a>{% endif %}
+    {%  if delete_route is defined and delete_route is not empty %}<a href="{{ path(delete_route,{'id':dt_item}) }}" class="btn btn-danger btn-xs deleterow tooltips" data-placement="top" data-container="body" data-original-title="{{ "Delete"|trans }}"><i class="fa fa-trash-o"></i></a>{% endif %}
 </div>
