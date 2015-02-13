@@ -227,26 +227,30 @@
 
             {% set i = 0 %}
             {% for label,key in fields %}
-                {% if label != '_identifier_' %}
-                    $('.columnToggler').append('<label><input type="checkbox" checked data-column="{{i}}">{{ label|trans }}</label>');
-                {% endif %}
+                {% if label == '_identifier_' %}{% set label = 'Aktionen' %}{% endif %}
+                $('.columnToggler').append('<label><input type="checkbox" checked data-column="{{i}}">{{ label|trans }}</label>');
                 {% set i = i+1 %}
             {% endfor %}
 
+            var oTable = eval('oTable_{{id}}'.split('-').join('_'));
             $('input[type="checkbox"]', $('.columnToggler')).change(function () {
-                var oTable = eval('oTable_{{id}}'.split('-').join('_'));
+
                 var iCol = parseInt($(this).attr("data-column"));
                 var bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
                 oTable.fnSetColumnVis(iCol, (bVis ? false : true));
             });
 
-            var oTableColReorder = new $.fn.dataTable.ColReorder( eval('oTable_{{id}}'.split('-').join('_')) );
+            var oTableColReorder = new $.fn.dataTable.ColReorder(oTable);
+
+            $(document).on('click', 'a.refreshGrid', function(e){
+                oTable.api().ajax.reload();
+            });
         });
     </script>
     {% if multiple %}
     <form name="frm-{{id}}">
-        {% endif %}
-        <table class="display table table-bordered" id="{{id}}">
+    {% endif %}
+        <table class="table table-striped table-bordered table-hover dataTable no-footer" id="{{id}}">
             <thead>
             <tr>
                 {% if multiple %}
@@ -264,10 +268,10 @@
                 {% endif %}
             </tr>
             </thead>
+            <tfoot>
             {% if search %}
                 {% set i = 0 %}
-                <thead>
-                <tr>
+                <tr role="row">
                     {% if multiple %}
                         <th></th>
                     {% endif %}
@@ -282,14 +286,14 @@
                             {% else %}
                                 <td><input index="{{i}}" searchable="true" type="text" placeholder="{{ 'ali.common.search'|trans() }}" class="search_init" /></td>
                             {% endif %}
-                        {% elseif label == '_identifier_'and action and not action_twig %}
+                        {% elseif label == '_identifier_'and action %}
                             <td>&nbsp;</td>
                         {% endif %}
                         {% set i = i+1 %}
                     {% endfor %}
                 </tr>
-                </thead>
             {% endif %}
+            </tfoot>
         </table>
         {% if multiple %}
     </form>

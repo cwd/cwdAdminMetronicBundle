@@ -1,0 +1,103 @@
+{% extends 'BraincraftedBootstrapBundle:Form:bootstrap.html.twig' %}
+
+{% block genemu_jqueryselect2_javascript %}
+    <script type="text/javascript">
+        $field = $('#{{ id }}');
+
+        var $configs = {{ configs|json_encode|raw }};
+
+        // custom configs
+        $configs = $.extend($configs, {
+            query: function (query) {
+                var data = {results: []}, i, j, s;
+                for (i = 1; i < 5; i++) {
+                    s = "";
+                    for (j = 0; j < i; j++) {s = s + query.term;}
+                    data.results.push({id: query.term + i, text: s});
+                }
+                query.callback(data);
+            }
+        });
+        // end of custom configs
+
+        $field.select2($configs);
+    </script>
+
+{% endblock %}
+
+{% block date_widget %}
+    {% spaceless %}
+        {% if widget == 'single_text' %}
+            {{ block('form_widget_simple') }}
+        {% else %}
+            {% set attr = attr|merge({ 'class': 'row' }) %}
+            <div {{ block('widget_container_attributes') }}>
+                {{ date_pattern|replace({
+                    '{{ year }}':  ['<div class="col-xs-1">', form_widget(form.year), '</div>']|join,
+                    '{{ month }}': ['<div class="col-xs-2">', form_widget(form.month), '</div>']|join,
+                    '{{ day }}':   ['<div class="col-xs-1">', form_widget(form.day), '</div>']|join,
+                })|raw }}
+            </div>
+        {% endif %}
+    {% endspaceless %}
+{% endblock date_widget %}
+
+{% block submit_widget %}
+    {% spaceless %}
+        {% set type = type|default('submit') %}
+        {% if label is empty and label is not sameas(false) %}
+            {% set label = name|humanize %}
+        {% endif %}
+        {% if type is defined and type == 'submit' %}
+            {% set attr = attr|merge({ 'class': (attr.class|default('') ~ ' btn btn-'~attr.type|default('primary'))|trim }) %}
+        {% else %}
+            {% set attr = attr|merge({ 'class': (attr.class|default('') ~ ' btn btn-'~attr.type|default('default'))|trim }) %}
+        {% endif %}
+        <div class="input-group">
+            <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{% if attr.icon is defined and attr.icon != '' %}{{ icon(attr.icon) }}{% endif %}{{ label|trans({}, translation_domain) }}</button>
+        </div>
+    {% endspaceless %}
+{% endblock submit_widget %}
+
+{% block form_label %}
+    {% spaceless %}
+        {% set col_size = col_size|default(bootstrap_get_col_size()) %}
+
+        {% if attr.label_col is defined and attr.label_col is not empty %}
+    {% set label_col = attr.label_col %}
+{% endif %}
+        {% if attr.widget_col is defined and attr.widget_col is not empty %}
+    {% set widget_col = attr.widget_col %}
+{% endif %}
+        {% if attr.col_size is defined and attr.col_size is not empty %}
+    {% set col_size = attr.col_size %}
+{% endif %}
+
+        {% if label is not sameas(false) %}
+            {% set style = style|default(bootstrap_get_style()) %}
+            {% set label_col = label_col|default(bootstrap_get_label_col()) %}
+
+            {% if attr.style is defined and attr.style is not empty %}
+    {% set style = attr.style %}
+{% endif %}
+
+            {% set label_attr = label_attr|merge({ 'class': (label_attr.class|default('') ~ ' control-label')|trim }) %}
+            {% if style == 'horizontal' %}
+    {% set label_attr = label_attr|merge({ 'class': (label_attr.class|default('') ~ ' col-' ~ col_size ~ '-' ~ label_col)|trim }) %}
+{% elseif style == 'inline' %}
+    {% set label_attr = label_attr|merge({ 'class': (label_attr.class|default('') ~ ' sr-only')|trim }) %}
+{% endif %}
+
+            {% if not compound %}
+    {% set label_attr = label_attr|merge({'for': id}) %}
+{% endif %}
+            {% if required %}
+    {% set label_required = '<span class="required">*</span>' %}
+{% endif %}
+            {% if label is empty %}
+    {% set label = name|humanize %}
+{% endif %}
+            <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ label|trans({}, translation_domain)|raw }} {% if required and label_required is defined %}{{ label_required|raw }}{% endif %}</label>
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_label %}

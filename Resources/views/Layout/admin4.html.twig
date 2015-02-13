@@ -37,6 +37,7 @@
         'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/icheck/skins/all.css'
         'bundles/cwdadminmetronic/assets/admin/pages/css/tasks.css'
         'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
         'bundles/cwdadminmetronic/assets/global/css/plugins.css'
@@ -1103,7 +1104,7 @@
     </div>
 
     <div class="page-content-wrapper">
-        <div class="page-content">
+        <div class="page-content" style="padding-top:0px">
             {% block pageContentSection %}
                 {% block pageHeaderSection %}
                 <div class="page-head">
@@ -2710,6 +2711,7 @@
     </div>
 </div>
 
+
 <!--[if lt IE 9]>
 <script src="/bundles/cwdadminmetronic/assets/global/plugins/respond.min.js"></script>
 <script src="/bundles/cwdadminmetronic/assets/global/plugins/excanvas.min.js"></script>
@@ -2742,6 +2744,8 @@
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/icheck/icheck.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootbox/bootbox.min.js'
 
     'bundles/cwdadminmetronic/assets/global/scripts/metronic.js'
     'bundles/cwdadminmetronic/assets/admin/layout4/scripts/layout.js'
@@ -2749,6 +2753,8 @@
     'bundles/cwdadminmetronic/assets/admin/pages/scripts/index3.js'
     'bundles/cwdadminmetronic/assets/admin/pages/scripts/tasks.js'
     'bundles/cwdadminmetronic/assets/admin/pages/scripts/portlet-draggable.js'
+
+    'bundles/cwdadminmetronic/bc-bootstrap-collection.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
@@ -2790,19 +2796,34 @@
             toastr.error("ERROR", "{{ flashMessage|escape }}")
         {% endfor %}
 
+
+
         // Delete Confirm Prompt
         $(document).on('click', 'table.dataTable a.deleterow', function(e){
             e.preventDefault();
             var $this = $(this);
+            var link = $this.attr('href');
 
-            $('#modal_ok_link').attr('href', $this.attr('href'));
-            $.magnificPopup.open({
-                items: {
-                    src: '#deleteRowModal',
-                    type: 'inline'
-                },
-                preloader: false,
-                modal: true
+
+            bootbox.dialog({
+                title: "{{ "Are you sure?"|trans }}",
+                message: "{{ "Are you sure that you want to delete this object?"|trans }}",
+                buttons: {
+                    success: {
+                        label: "{{ "Yes, delete"|trans }}",
+                        className: "red",
+                        callback: function() {
+                            location.href = link;
+                        }
+                    },
+                    danger: {
+                        label: "{{ "No, dont delete"|trans }}",
+                        className: "grey",
+                        callback: function() {
+                            return;
+                        }
+                    }
+                }
             });
         });
 

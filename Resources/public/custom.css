@@ -2,3 +2,15 @@
     border: 2px dashed #fff;
     margin-bottom: 25px;
 }
+
+.table thead, table.table-bordered.dataTable, .table thead td {
+    border-collapse: collapse !important;
+}
+
+ul.bc-collection .row {
+    margin-left:0px;
+}
+
+ul.bc-collection div.row div.form-inline {
+    margin-top:5px;
+}
