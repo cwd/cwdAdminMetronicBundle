@@ -18,3 +18,7 @@ ul.bc-collection div.row div.form-inline {
 .table .btn-group .btn {
     margin-right:0;
 }
+
+.fc-content .fc-time {
+    margin-right:5px;
+}

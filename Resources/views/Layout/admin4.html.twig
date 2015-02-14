@@ -38,6 +38,10 @@
         'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css'
         'bundles/cwdadminmetronic/assets/global/plugins/icheck/skins/all.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css'
         'bundles/cwdadminmetronic/assets/admin/pages/css/tasks.css'
         'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
         'bundles/cwdadminmetronic/assets/global/css/plugins.css'
@@ -51,9 +55,10 @@
 
     {% block stylesheets %}{% endblock %}
     <link rel="shortcut icon" href="favicon.ico"/>
-    <script src="/bundles/cwdadminmetronic/assets/global/plugins/jquery.min.js"></script>
+    <script src="{{ asset('bundles/cwdadminmetronic/assets/global/plugins/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 </head>
-<body class="page-header-fixed page-sidebar-closed-hide-logo">
+<body class="page-header-fixed {% block bodyClass %}page-sidebar-closed-hide-logo{% endblock %}">
 
 {% block headerSection %}
 <div class="page-header navbar navbar-fixed-top">
@@ -2746,6 +2751,10 @@
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'
     'bundles/cwdadminmetronic/assets/global/plugins/icheck/icheck.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootbox/bootbox.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/gmaps/gmaps.min.js'
 
     'bundles/cwdadminmetronic/assets/global/scripts/metronic.js'
     'bundles/cwdadminmetronic/assets/admin/layout4/scripts/layout.js'
@@ -2754,7 +2763,13 @@
     'bundles/cwdadminmetronic/assets/admin/pages/scripts/tasks.js'
     'bundles/cwdadminmetronic/assets/admin/pages/scripts/portlet-draggable.js'
 
+    'bundles/cwdadminmetronic/assets/global/plugins/moment.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/lang/de.js'
+
     'bundles/cwdadminmetronic/bc-bootstrap-collection.js'
+
+    'bundles/cwdadminmetronic/custom.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
 {% endjavascripts %}
