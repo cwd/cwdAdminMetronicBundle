@@ -24,7 +24,9 @@
     "braincrafted/bootstrap-bundle": "dev-develop",
     "genemu/form-bundle": "2.2.*",
     "ali/datatable": "dev-master",
-    "cwd/generic-bundle": "dev-master"
+    "cwd/generic-bundle": "dev-master",
+    "knplabs/knp-menu":"~1.1",
+    "knplabs/knp-menu-bundle":"~1.1"
   },
   "autoload": {
     "psr-0": {
