@@ -23,7 +23,7 @@ ul.bc-collection div.row div.form-inline {
     margin-right:5px;
 }
 
-.dropdown-menu .pull-right {
+.dropdown-menu.pull-right {
     top: 28px !important;
     right:50px !important;
 }
