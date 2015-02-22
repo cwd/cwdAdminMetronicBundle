@@ -42,6 +42,12 @@
         'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-select/bootstrap-select.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/jquery-multi-select/css/multi-select.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.css'
+        'bundles/cwdadminmetronic/assets/global/plugins/ion.rangeslider/css/ion.rangeSlider.Metronic.css'
+
         'bundles/cwdadminmetronic/assets/admin/pages/css/tasks.css'
         'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
         'bundles/cwdadminmetronic/assets/global/css/plugins.css'
@@ -2171,8 +2177,13 @@
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-markdown/lib/markdown.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-markdown/js/bootstrap-markdown.js'
     'bundles/cwdadminmetronic/assets/global/plugins/gmaps/gmaps.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-select/bootstrap-select.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js'
 
     'bundles/cwdadminmetronic/assets/global/scripts/metronic.js'
     'bundles/cwdadminmetronic/assets/admin/layout4/scripts/layout.js'
@@ -2260,12 +2271,11 @@
             });
         });
 
-        {% block javascriptSection %}
-        {% endblock %}
-
 
     });
 </script>
+{% block javascriptSection %}
+{% endblock %}
 <div id="helper-modal" class="modal fade" tabindex="-1"></div>
 </body>
 </html>
