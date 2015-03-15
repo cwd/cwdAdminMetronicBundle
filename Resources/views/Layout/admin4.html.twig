@@ -27,7 +27,6 @@
         'bundles/cwdadminmetronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap/css/bootstrap.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/uniform/css/uniform.default.css'
-        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-toastr/toastr.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.css'
@@ -40,8 +39,8 @@
         'bundles/cwdadminmetronic/assets/global/plugins/icheck/skins/all.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css'
         'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.css'
-        'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/css/bootstrap-modal.css'
+
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-select/bootstrap-select.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css'
         'bundles/cwdadminmetronic/assets/global/plugins/jquery-multi-select/css/multi-select.css'
@@ -52,9 +51,12 @@
         'bundles/cwdadminmetronic/assets/global/css/components-rounded.css'
         'bundles/cwdadminmetronic/assets/global/css/plugins.css'
         'bundles/cwdadminmetronic/assets/admin/layout4/css/layout.css'
+
+        'https://gitcdn.github.io/bootstrap-toggle/2.2.0/css/bootstrap-toggle.min.css'
         'bundles/cwdadminmetronic/custom.css'
         filter='cssrewrite'
     %}
+    {#'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch.css'#}
     <link rel="stylesheet" href="{{  asset_url }}" />
     {% endstylesheets %}
     <link rel="stylesheet" href="{{ asset("bundles/cwdadminmetronic/assets/admin/layout4/css/themes/#{ themeStyle|default('default') }.css") }}" />
@@ -2149,31 +2151,23 @@
     'bundles/cwdadminmetronic/assets/global/plugins/jquery-migrate.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/jquery-ui/jquery-ui.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap/js/bootstrap.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-toastr/toastr.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jquery.blockui.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jquery.cokie.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/uniform/jquery.uniform.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/morris/morris.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/morris/raphael-min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/jquery.sparkline.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/select2/select2.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootbox/bootbox.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/media/js/jquery.dataTables.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-toastr/toastr.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/jquery.blockui.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/jquery.cokie.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/uniform/jquery.uniform.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/morris/morris.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/morris/raphael-min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/jquery.sparkline.min.js'
+    'bundles/cwdadminmetronic/assets/global/plugins/select2/select2.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/icheck/icheck.min.js'
-    'bundles/cwdadminmetronic/assets/global/plugins/bootbox/bootbox.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js'
     'bundles/cwdadminmetronic/assets/global/plugins/bootstrap-modal/js/bootstrap-modal.js'
@@ -2185,19 +2179,16 @@
     'bundles/cwdadminmetronic/assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js'
     'bundles/cwdadminmetronic/assets/global/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js'
 
+    'https://gitcdn.github.io/bootstrap-toggle/2.2.0/js/bootstrap-toggle.min.js'
+
     'bundles/cwdadminmetronic/assets/global/scripts/metronic.js'
     'bundles/cwdadminmetronic/assets/admin/layout4/scripts/layout.js'
-    'bundles/cwdadminmetronic/assets/admin/layout4/scripts/demo.js'
-    'bundles/cwdadminmetronic/assets/admin/pages/scripts/index3.js'
     'bundles/cwdadminmetronic/assets/admin/pages/scripts/tasks.js'
     'bundles/cwdadminmetronic/assets/admin/pages/scripts/portlet-draggable.js'
-
     'bundles/cwdadminmetronic/assets/global/plugins/moment.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/fullcalendar.min.js'
     'bundles/cwdadminmetronic/assets/global/plugins/fullcalendar/lang/de.js'
-
     'bundles/cwdadminmetronic/bc-bootstrap-collection.js'
-
     'bundles/cwdadminmetronic/custom.js'
 %}
 <script type="text/javascript" src="{{ asset_url }}"></script>
@@ -2206,11 +2197,11 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         Metronic.init();
-        Layout.init();
+        //Layout.init();
         //Demo.init();
         //Index.init();
-        Tasks.initDashboardWidget();
-        PortletDraggable.init();
+        //Tasks.initDashboardWidget();
+        //PortletDraggable.init();
 
         toastr.options = {
             "closeButton": true,
@@ -2240,6 +2231,8 @@
             toastr.error("ERROR", "{{ flashMessage|escape }}")
         {% endfor %}
 
+        // Form Switcher
+        $('.switcher').bootstrapToggle();
 
 
         // Delete Confirm Prompt

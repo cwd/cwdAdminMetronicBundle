@@ -237,13 +237,14 @@
             {% endif %}
 
             {% set i = 0 %}
+            var oTable = eval('oTable_{{id}}'.split('-').join('_'));
             {% for label,key in fields %}
                 {% if label == '_identifier_' %}{% set label = 'Aktionen' %}{% endif %}
-                $('.columnToggler').append('<label><input type="checkbox" checked data-column="{{i}}">{{ label|trans }}</label>');
+                $('.columnToggler').append('<label><input type="checkbox" '+ (oTable.fnSettings().aoColumns[{{ i }}].bVisible ? 'checked' : '') +' data-column="{{i}}">{{ label|trans }}</label>');
                 {% set i = i+1 %}
             {% endfor %}
 
-            var oTable = eval('oTable_{{id}}'.split('-').join('_'));
+
             $('input[type="checkbox"]', $('.columnToggler')).change(function () {
 
                 var iCol = parseInt($(this).attr("data-column"));
