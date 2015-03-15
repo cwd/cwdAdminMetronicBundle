@@ -42,6 +42,15 @@
             }
             $options = $opts;
             var $aoColumnDefs = new Array();
+            $aoColumnDefs.push({
+                'aTargets': [-1],
+                'sWidth' : '120px',
+                'sClass' : 'text-center',
+                'bSortable': false
+            },{
+                'aTargets': [0],
+                        'sWidth' : '75px'
+            });
             {% if multiple %}
             $aoColumnDefs.push({ 'bSortable': false, 'aTargets': [ 0 ] });
             {% endif %}
@@ -83,6 +92,8 @@
                 "aLengthMenu": [[5,10, 25, 50, -1], [5,10, 25, 50, "All"]],
                 "iDisplayLength": 10,
                 "bServerSide": true,
+                "bStateSave": true,
+                "stateSave": true,
                 "bProcessing": true,
                 "sAjaxSource": null,
                 "bPaginate": true,
