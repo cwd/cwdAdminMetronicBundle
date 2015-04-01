@@ -8,11 +8,11 @@
 {% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('/bundles/dpaneladmin/css/theme.css') }}" />
+    {#<link rel="stylesheet" href="{{ asset('/bundles/dpaneladmin/css/theme.css') }}" />#}
 {% endblock %}
 
 {% block logo %}
-    <img src="{{ '/bundles/cwdadminmetronic/cwd.png' }}" class="logo-default" style="margin-top:7px" />
+    <img src="{{ asset('bundles/cwdadminmetronic/cwd.png') }}" class="logo-default" style="margin-top:7px" />
 {% endblock %}
 
 {% block pageactionSection %}
@@ -54,10 +54,9 @@
 <h1>MyTitle</h1>
 {% endblock %}
 
-{#
 {% block menuSection %}
+    {{ knp_menu_render('CwdAdminMetronicBundle:Main:mainMenu', {'currentClass':'active', 'ancestorClass': 'active', 'firstClass': 'start'}) }}
 {% endblock %}
-#}
 
 {% block content %}
     <div class="row">
@@ -156,6 +155,67 @@
                 {% endblock %}
             {% endembed %}
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            {% embed "#{Helper}:tile.html.twig" with {'link':'#'} %}
+                {% block title %}My Title{% endblock %}
+                {% block value %}12345${% endblock %}
+            {% endembed %}
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            {% embed "#{Helper}:tile.html.twig" with {'link': '#', 'link_title':'Click for more', 'icon': 'fa-globe', 'color':'purple'} %}
+                {% block title %}Text{% endblock %}
+                {% block value %}24,60 €{% endblock %}
+            {% endembed %}
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            {% embed "#{Helper}:tile.html.twig" with {'link': '#', 'link_title':'Click for more', 'icon': 'fa-shopping-cart', 'color': 'grey'} %}
+                {% block title %}Value{% endblock %}
+                {% block value %}123.212{% endblock %}
+            {% endembed %}
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            {% embed "#{Helper}:tile.html.twig" with {'link': '#', 'link_title':'Click for more', 'icon': 'fa-globe', 'color': 'red-intense'} %}
+                {% block title %}my Value{% endblock %}
+                {% block value %}10{% endblock %}
+            {% endembed %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            {% embed "#{Helper}:portlet.html.twig" with {'title': 'Knobs'} %}
+                {% block body %}
+                <div class="row">
+                    <div class="col-md-4">
+                        {% embed "#{Helper}:pie.html.twig" with {'title': 'Foo', 'value': 12, 'link': '#'} %}
+                        {% endembed %}
+                    </div>
+                    <div class="margin-bottom-10 visible-sm">
+                    </div>
+                    <div class="col-md-4">
+                        {% embed "#{Helper}:pie.html.twig" with {'title': 'Foo', 'value': 75, 'link': '#', 'color': 'red'} %}
+                        {% endembed %}
+                    </div>
+                    <div class="margin-bottom-10 visible-sm">
+                    </div>
+                    <div class="col-md-4">
+                        {% embed "#{Helper}:pie.html.twig" with {'title': 'Foo', 'value': 42, 'link': '#', 'color': 'blue'} %}
+                        {% endembed %}
+                    </div>
+                </div>
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                           Charts();
+                        });
+                    </script>
+                {% endblock %}
+            {% endembed %}
+        </div>
+
+        <div class="col-lg-6"></div>
     </div>
 
     {{ parent() }}

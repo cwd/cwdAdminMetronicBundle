@@ -108,7 +108,9 @@
 
 {% block item %}
     {% if item.displayed %}
-        {# building the class of the item #}
+        {%- set divider_prepend = item.attribute('divider_prepend')|default(false) %}
+        {%- set divider_append = item.attribute('divider_append')|default(false) %}
+
         {%- set classes = item.attribute('class') is not empty ? [item.attribute('class')] : [] %}
         {%- if (matcher is defined and matcher.isCurrent(item)) or (item.current is defined and item.current) %}
             {%- set classes = classes|merge([options.currentClass]) %}
@@ -125,6 +127,10 @@
             {%- set classes = classes|merge(['nav-header']) %}
         {%- elseif item.hasChildren and options.style is defined and options.style in ['tabs', 'justified-tabs', 'pills', 'justified-pills', 'navbar', 'navbar-right', 'navbar_justified'] and ((item.extras.dropdown is not defined and item.displayChildren is sameas(true) or item.extras.dropdown is defined and item.extras.dropdown is sameas(true) and item.displayChildren is sameas(true))) %}
             {%- set classes = classes|merge(['dropdown']) %}
+        {%- endif %}
+
+        {%- if divider_prepend %}
+            {{ block('dividerElement') }}
         {%- endif %}
 
         {%- set attributes = item.attributes %}
@@ -186,9 +192,12 @@
 {% endblock dropdownElement %}
 
 {% block dividerElement %}
-    {% spaceless %}
-    {% endspaceless %}
-{% endblock dividerElement %}
+    {% if item.level == 1 %}
+        <li class="divider-vertical"><hr /></li>
+    {% else %}
+        <li class="divider"><hr /></li>
+    {% endif %}
+{% endblock %}
 
 {% block spanElement %}<span{{ _self.attributes(item.labelAttributes) }}>{{ block('label') }}</span>{% endblock %}
 

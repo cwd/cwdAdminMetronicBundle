@@ -1,0 +1,14 @@
+<div class="easy-pie-chart">
+    <div class="pie-value number" data-color="{{ color|default('green') }}" data-percent="{{ value }}">
+        {% block content %}
+        <span>{{ value }}</span> %
+        {% endblock %}
+    </div>
+    {% if link is defined %}
+    <a class="title" href="{{ link }}">
+        {{ title }} <i class="icon-arrow-right"></i>
+    </a>
+    {% else %}
+        {{ title }}
+    {% endif %}
+</div>

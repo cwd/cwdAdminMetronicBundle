@@ -53,7 +53,7 @@
 <div class="content">
     <form class="login-form" action="{{ path("auth_security_check") }}" method="post">
         <h3 class="font-blue-hoki">{{ "Sign In"|trans }}</h3>
-        {% if error %}
+        {% if error is defined and error %}
             <div class="alert alert-danger">
                 <span>{{ error.message|trans }}</span>
             </div>
