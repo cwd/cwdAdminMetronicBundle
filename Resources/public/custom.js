@@ -53,6 +53,22 @@ var handleColorPicker = function () {
 }
 handleColorPicker();
 
+var handleDatePickers = function () {
+
+    //if (jQuery().datepicker) {
+        $('.date-picker').datepicker({
+            rtl: Metronic.isRTL(),
+            orientation: "left",
+            autoclose: true,
+            weekStart: 1,
+            language: 'de',
+            format:'yyyy-mm-dd'
+        });
+        //$('body').removeClass("modal-open"); // fix bug when inline picker is used in modal
+    //}
+}
+handleDatePickers();
+
 $(document).on('click', 'a.modal-open', function(e){
     e.preventDefault();
 
