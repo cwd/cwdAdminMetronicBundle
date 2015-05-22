@@ -1,4 +1,4 @@
-<div class="portlet {{ class|default('') }} {{ type|default('box') }} {{ color|default(themeColor) }} {{ sortable|default(false) ? 'portlet-sortable ui-sortable-handle' : '' }}">
+<div {% if id is defined %}id="{{ id }}"{% endif %} class="portlet {{ class|default('') }} {{ type|default('box') }} {{ color|default(themeColor) }} {{ sortable|default(false) ? 'portlet-sortable ui-sortable-handle' : '' }}">
     {% block header %}
         <div class="portlet-title">
             <div class="caption">
