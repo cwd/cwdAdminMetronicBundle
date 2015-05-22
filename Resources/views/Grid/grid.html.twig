@@ -107,6 +107,7 @@
                     if( multiple && $('.dataTables_multiple',$(s)).length==0){
                         $(s+' .dataTables_length').prepend(multiple_rawhtml);
                     }
+                    $('.tooltips').tooltip();
                     {% block datagrid_afterajax %}{% endblock %}
                 },
                 "bSort": true,

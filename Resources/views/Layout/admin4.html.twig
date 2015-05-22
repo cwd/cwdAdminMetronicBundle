@@ -506,7 +506,7 @@
             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
             #}
             {% block menuSection %}
-            <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+            <ul class="page-sidebar-menu {% block sidebarClass %}{% endblock %}" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                 <li class="start active ">
                     <a href="index.html">
                         <i class="icon-home"></i>
@@ -2210,7 +2210,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         Metronic.init();
-        //Layout.init();
+        Layout.init();
         //Demo.init();
         //Index.init();
         //Tasks.initDashboardWidget();

@@ -93,9 +93,9 @@
         {% else %}
             {% set attr = attr|merge({ 'class': (attr.class|default('') ~ ' btn btn-'~attr.type|default('default'))|trim }) %}
         {% endif %}
-        <div class="input-group">
+        {#<div class="clearfix">#}
             <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{% if attr.icon is defined and attr.icon != '' %}{{ icon(attr.icon) }}{% endif %}{{ label|trans({}, translation_domain) }}</button>
-        </div>
+        {#</div>#}
     {% endspaceless %}
 {% endblock submit_widget %}
 
