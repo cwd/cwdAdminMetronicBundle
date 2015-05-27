@@ -1,0 +1,18 @@
+<div class="dashboard-stat {{ color|default(themeColor) }}">
+    <div class="visual">
+        <i class="fa {{ icon|default('fa-bar-chart-o') }}"></i>
+    </div>
+    <div class="details">
+        <div class="number">
+            {% block value %}1234{% endblock %}
+        </div>
+        <div class="desc">
+            {% block title %}Titel{% endblock %}
+        </div>
+    </div>
+    {% if link is defined %}
+    <a class="more" href="{{ link }}">
+        {{ link_title|default('View more'|trans) }} <i class="m-icon-swapright m-icon-white"></i>
+    </a>
+    {% endif %}
+</div>

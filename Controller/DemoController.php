@@ -18,7 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
  *
  * @package Dpanel\Bundle\ApiBundle\Controller
  * @author  Ludwig Ruderstaller <lr@cwd.at>
- * @Route("/demo")
+ * @Route("/")
  */
 class DemoController extends Controller
 {
@@ -35,12 +35,20 @@ class DemoController extends Controller
 
     /**
      *
-     * @Route("/dashboard")
+     * @Route("/")
      * @Template()
      * @return array()
      */
     public function dashboardAction()
     {
         return array();
+    }
+
+    /**
+     * @Route("/dummy", name="auth_security_check")
+     */
+    public function dummyAction()
+    {
+
     }
 }
