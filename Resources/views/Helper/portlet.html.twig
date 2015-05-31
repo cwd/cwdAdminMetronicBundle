@@ -3,7 +3,7 @@
         <div class="portlet-title">
             <div class="caption">
                 {% block title %}
-                <i class="fa {{ icon|default('fa-gift') }}"></i>{{ title|trans|default('Title') }}
+                <i class="fa {{ icon|default('fa-gift') }}"></i>{{ title|trans|default('Title')|raw }}
                 {% endblock %}
             </div>
             {% block tabs %}
