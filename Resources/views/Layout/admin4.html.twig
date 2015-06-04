@@ -2232,16 +2232,16 @@
         }
 
         {% for flashMessage in app.session.flashbag.get('notice') %}
-            toastr.warning("Notice", "{{ flashMessage|escape }}")
+            toastr.warning("Notice", "{{ flashMessage|replace({'\n': '\\n'})|escape|raw }}")
         {% endfor %}
         {% for flashMessage in app.session.flashbag.get('info') %}
-            toastr.info("INFO", "{{ flashMessage|escape }}")
+            toastr.info("INFO", "{{ flashMessage|escape|replace({'\n': '\\n'})|raw }}")
         {% endfor %}
         {% for flashMessage in app.session.flashbag.get('success') %}
-            toastr.success("SUCCESS", "{{ flashMessage|escape }}")
+            toastr.success("SUCCESS", "{{ flashMessage|escape|replace({'\n': '\\n'})|raw }}")
         {% endfor %}
         {% for flashMessage in app.session.flashbag.get('error') %}
-            toastr.error("ERROR", "{{ flashMessage|escape }}")
+            toastr.error("ERROR", "{{ flashMessage|escape|replace({'\n': '\\n'})|raw }}")
         {% endfor %}
 
         // Form Switcher
