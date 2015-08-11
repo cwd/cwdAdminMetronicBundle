@@ -1,0 +1,6 @@
+services:
+    datatable.twig.extension:
+        class: Cwd\Admin\MetronicBundle\Twig\CwdDatatableExtension
+        arguments: [ @service_container ]
+        tags:
+            -  { name: twig.extension }
