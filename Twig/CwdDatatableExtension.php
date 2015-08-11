@@ -19,7 +19,6 @@ class CwdDatatableExtension extends AliDatatableExtension
     {
         if (!isset($options['id']))
         {
-            dump('ali-dta_' . md5(str_replace("/", '-', $options['js']['sAjaxSource'])));
             $options['id'] = 'ali-dta_' . md5(str_replace("/", '-', $options['js']['sAjaxSource']));
         }
         $dt                       = Datatable::getInstance($options['id']);
