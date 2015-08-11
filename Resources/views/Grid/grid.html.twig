@@ -110,6 +110,16 @@
                     $('.tooltips').tooltip();
                     {% block datagrid_afterajax %}{% endblock %}
                 },
+                "fnInitComplete": function(oSettings, json) {
+                    var cols = oSettings.aoPreSearchCols;
+                    for (var i = 0; i < cols.length; i++) {
+                        var value = cols[i].sSearch;
+                        console.log(value);
+                        if (value.length > 0) {
+                            $("tfoot input")[i].value = value;
+                        }
+                    }
+                },
                 "bSort": true,
                 "bFilter": {% if search %} true {% else %} false {% endif %},
                 "oLanguage": {
