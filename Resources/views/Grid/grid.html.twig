@@ -1,6 +1,17 @@
 {% block main %}
     <script type="text/javascript">
         $(document).ready(function(){
+            $.fn.dataTableExt.oApi.fnResetAllFilters = function (oSettings, bDraw/*default true*/) {
+                for(iCol = 0; iCol < oSettings.aoPreSearchCols.length; iCol++) {
+                    oSettings.aoPreSearchCols[ iCol ].sSearch = '';
+                }
+                oSettings.oPreviousSearch.sSearch = '';
+                $('tfoot input').val('');
+
+                if(typeof bDraw === 'undefined') bDraw = true;
+                if(bDraw) this.fnDraw();
+            }
+
             function getId() { return "{{id}}"; };
             function getWrapper() { return  "#{{id}}_wrapper"; };
             var s = getWrapper();
@@ -112,11 +123,14 @@
                 },
                 "fnInitComplete": function(oSettings, json) {
                     var cols = oSettings.aoPreSearchCols;
-                    for (var i = 0; i < cols.length; i++) {
-                        var value = cols[i].sSearch;
-                        console.log(value);
-                        if (value.length > 0) {
-                            $("tfoot input")[i].value = value;
+                    for (var i=0 ; i<cols.length ; i++ ){
+                        if (cols[i].sSearch.length>0) {
+                            var svalue = cols[i].sSearch;
+                            $("tfoot input").each(function(i){
+                               if ($(this).attr('index') == 5) {
+                                   $(this).val(svalue);
+                               }
+                            });
                         }
                     }
                 },
@@ -266,6 +280,11 @@
 
             var oTableColReorder = new $.fn.dataTable.ColReorder(oTable);
 
+
+
+            $(document).on('click', 'a.cleanGrid', function(e){
+                oTable.fnResetAllFilters(true);
+            });
             $(document).on('click', 'a.refreshGrid', function(e){
                 oTable.api().ajax.reload();
             });
