@@ -126,8 +126,8 @@
                     for (var i=0 ; i<cols.length ; i++ ){
                         if (cols[i].sSearch.length>0) {
                             var svalue = cols[i].sSearch;
-                            $("tfoot input").each(function(i){
-                               if ($(this).attr('index') == 5) {
+                            $("tfoot input").each(function(){
+                               if ($(this).attr('index') == i) {
                                    $(this).val(svalue);
                                }
                             });
