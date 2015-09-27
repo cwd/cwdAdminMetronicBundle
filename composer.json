@@ -21,9 +21,8 @@
     "php": ">=5.3",
     "symfony/framework-bundle": ">2.3.0",
     "symfony/symfony": "2.*",
-    "braincrafted/bootstrap-bundle": "dev-develop",
     "genemu/form-bundle": "2.2.*",
-    "ali/datatable": ">=1.4,<2.0",
+    "ali/datatable": "~2",
     "cwd/generic-bundle": "dev-master",
     "knplabs/knp-menu":"~2",
     "knplabs/knp-menu-bundle":"~2"
