@@ -23,7 +23,7 @@
     "symfony/symfony": "2.*",
     "genemu/form-bundle": "2.2.*",
     "ali/datatable": "~2",
-    "cwd/generic-bundle": "dev-master",
+    "cwd/generic-bundle": "dev-develop",
     "knplabs/knp-menu":"~2",
     "knplabs/knp-menu-bundle":"~2"
   },
