@@ -3,12 +3,20 @@
 namespace Cwd\Admin\MetronicBundle\Twig;
 
 use Ali\DatatableBundle\Twig\Extension\AliDatatableExtension;
-use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Ali\DatatableBundle\Util\Datatable;
 
 class CwdDatatableExtension extends AliDatatableExtension
 {
+    /**
+     * Overwritten to get rid of deprecation warning
+     */
+    public function getFunctions()
+    {
+        return array(
+            'datatable' => new \Twig_SimpleFunction('datatable', array($this, 'datatable'), array("is_safe" => array("html")))
+        );
+    }
+
     /**
      * Converts a string to time
      *
