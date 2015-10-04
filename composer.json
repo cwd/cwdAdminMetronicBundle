@@ -21,7 +21,6 @@
     "php": ">=5.3",
     "symfony/framework-bundle": ">2.3.0",
     "symfony/symfony": "2.*",
-    "genemu/form-bundle": "2.2.*",
     "ali/datatable": ">=1.4,<2.1",
     "cwd/generic-bundle": "dev-develop",
     "knplabs/knp-menu":"~2",
