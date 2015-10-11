@@ -53,6 +53,16 @@ var handleColorPicker = function () {
 }
 handleColorPicker();
 
+var handleMiniPicker = function () {
+    if (!jQuery().minicolors) {
+        return;
+    }
+    $('.minicolors').minicolors({
+        theme: 'bootstrap'
+    });
+}
+handleMiniPicker();
+
 var handleDatePickers = function () {
 
     //if (jQuery().datepicker) {
