@@ -63,13 +63,16 @@
 .portlet.box.cwd-primary > .portlet-title > .actions .btn-default {
     background: transparent !important;
     background-color: transparent !important;
-    border: 1px solid #16689b;
-    color: #1977b2; }
+    color: #FFFFFF;
+ }
 .portlet.box.cwd-primary > .portlet-title > .actions .btn-default > i {
-    color: #1b7fbf; }
+     }
 .portlet.box.cwd-primary > .portlet-title > .actions .btn-default:hover, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default:focus, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default:active, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default.active {
-    border: 1px solid #1c85c8;
-    color: #1f94de; }
+    border: 1px solid #4ea700;
+    color: #4ea700; }
+
+.portlet.box.cwd-primary > .portlet-title > .actions .btn-default:hover > i, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default:focus > i, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default:active > i, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default.active > i {
+    color: #4ea700; }
 
 /* Statistic Block */
 .dashboard-stat.cwd-primary {
