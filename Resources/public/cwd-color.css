@@ -1,0 +1,213 @@
+/* Button */
+.cwd-primary.btn {
+    color: #FFFFFF;
+    background-color: #082639; }
+.cwd-primary.btn:hover, .cwd-primary.btn:focus, .cwd-primary.btn:active, .cwd-primary.btn.active {
+    color: #FFFFFF;
+    background-color: #04111a; }
+.open .cwd-primary.btn.dropdown-toggle {
+    color: #FFFFFF;
+    background-color: #04111a; }
+.cwd-primary.btn:active, .cwd-primary.btn.active {
+    background-image: none;
+    background-color: #000203; }
+.cwd-primary.btn:active:hover, .cwd-primary.btn.active:hover {
+    background-color: #02080c; }
+.open .cwd-primary.btn.dropdown-toggle {
+    background-image: none; }
+.cwd-primary.btn.disabled, .cwd-primary.btn.disabled:hover, .cwd-primary.btn.disabled:focus, .cwd-primary.btn.disabled:active, .cwd-primary.btn.disabled.active, .cwd-primary.btn[disabled], .cwd-primary.btn[disabled]:hover, .cwd-primary.btn[disabled]:focus, .cwd-primary.btn[disabled]:active, .cwd-primary.btn[disabled].active, fieldset[disabled] .cwd-primary.btn, fieldset[disabled] .cwd-primary.btn:hover, fieldset[disabled] .cwd-primary.btn:focus, fieldset[disabled] .cwd-primary.btn:active, fieldset[disabled] .cwd-primary.btn.active {
+    background-color: #082639; }
+.cwd-primary.btn .badge {
+    color: #082639;
+    background-color: #FFFFFF; }
+
+/* Button Strip */
+.btn.cwd-primary-stripe {
+    border-left: 3px solid #082639; }
+
+/* Portlet */
+.portlet > .portlet-body.cwd-primary,
+.portlet.cwd-primary {
+    background-color: #082639; }
+
+.portlet.solid.cwd-primary > .portlet-title,
+.portlet.solid.cwd-primary > .portlet-body {
+    border: 0;
+    color: #FFFFFF; }
+.portlet.solid.cwd-primary > .portlet-title > .caption {
+    font-weight: 400; }
+.portlet.solid.cwd-primary > .portlet-title > .caption > i {
+    color: #FFFFFF; }
+.portlet.solid.cwd-primary > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png); }
+.portlet.solid.cwd-primary > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png); }
+.portlet.solid.cwd-primary > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png); }
+.portlet.solid.cwd-primary > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png); }
+.portlet.solid.cwd-primary > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png); }
+.portlet.solid.cwd-primary > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd; }
+
+.portlet.box.cwd-primary {
+    border: 1px solid #0e4466;
+    border-top: 0; }
+.portlet.box.cwd-primary > .portlet-title {
+    background-color: #082639; }
+.portlet.box.cwd-primary > .portlet-title > .caption {
+    color: #FFFFFF; }
+.portlet.box.cwd-primary > .portlet-title > .caption > i {
+    color: #FFFFFF; }
+.portlet.box.cwd-primary > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #16689b;
+    color: #1977b2; }
+.portlet.box.cwd-primary > .portlet-title > .actions .btn-default > i {
+    color: #1b7fbf; }
+.portlet.box.cwd-primary > .portlet-title > .actions .btn-default:hover, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default:focus, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default:active, .portlet.box.cwd-primary > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #1c85c8;
+    color: #1f94de; }
+
+/* Statistic Block */
+.dashboard-stat.cwd-primary {
+    background-color: #082639; }
+.dashboard-stat.cwd-primary.dashboard-stat-light:hover {
+    background-color: #051a27; }
+.dashboard-stat.cwd-primary .visual > i {
+    color: #FFFFFF;
+    opacity: 0.1;
+    filter: alpha(opacity=10); }
+.dashboard-stat.cwd-primary .details .number {
+    color: #FFFFFF; }
+.dashboard-stat.cwd-primary .details .desc {
+    color: #FFFFFF;
+    opacity: 1;
+    filter: alpha(opacity=100); }
+.dashboard-stat.cwd-primary .more {
+    color: #FFFFFF;
+    background-color: #051a27; }
+
+/* General Element */
+.bg-cwd-primary {
+    border-color: #082639 !important;
+    background-image: none !important;
+    background-color: #082639 !important;
+    color: #FFFFFF !important; }
+
+/* General Text & Icon Font Colors */
+.font-cwd-primary {
+    color: #082639 !important; }
+
+.progress-bar.cwd-primary {
+    background: #082639 !important;
+    color: #FFFFFF !important; }
+
+/* Button */
+.cwd-secondary.btn {
+    color: #000000;
+    background-color: #4ea700; }
+.cwd-secondary.btn:hover, .cwd-secondary.btn:focus, .cwd-secondary.btn:active, .cwd-secondary.btn.active {
+    color: #000000;
+    background-color: #3d8300; }
+.open .cwd-secondary.btn.dropdown-toggle {
+    color: #000000;
+    background-color: #3d8300; }
+.cwd-secondary.btn:active, .cwd-secondary.btn.active {
+    background-image: none;
+    background-color: #316a00; }
+.cwd-secondary.btn:active:hover, .cwd-secondary.btn.active:hover {
+    background-color: #367400; }
+.open .cwd-secondary.btn.dropdown-toggle {
+    background-image: none; }
+.cwd-secondary.btn.disabled, .cwd-secondary.btn.disabled:hover, .cwd-secondary.btn.disabled:focus, .cwd-secondary.btn.disabled:active, .cwd-secondary.btn.disabled.active, .cwd-secondary.btn[disabled], .cwd-secondary.btn[disabled]:hover, .cwd-secondary.btn[disabled]:focus, .cwd-secondary.btn[disabled]:active, .cwd-secondary.btn[disabled].active, fieldset[disabled] .cwd-secondary.btn, fieldset[disabled] .cwd-secondary.btn:hover, fieldset[disabled] .cwd-secondary.btn:focus, fieldset[disabled] .cwd-secondary.btn:active, fieldset[disabled] .cwd-secondary.btn.active {
+    background-color: #4ea700; }
+.cwd-secondary.btn .badge {
+    color: #4ea700;
+    background-color: #000000; }
+
+/* Button Strip */
+.btn.cwd-secondary-stripe {
+    border-left: 3px solid #4ea700; }
+
+/* Portlet */
+.portlet > .portlet-body.cwd-secondary,
+.portlet.cwd-secondary {
+    background-color: #4ea700; }
+
+.portlet.solid.cwd-secondary > .portlet-title,
+.portlet.solid.cwd-secondary > .portlet-body {
+    border: 0;
+    color: #000000; }
+.portlet.solid.cwd-secondary > .portlet-title > .caption {
+    font-weight: 400; }
+.portlet.solid.cwd-secondary > .portlet-title > .caption > i {
+    color: #000000; }
+.portlet.solid.cwd-secondary > .portlet-title > .tools > a.remove {
+    background-image: url(../img/portlet-remove-icon-white.png); }
+.portlet.solid.cwd-secondary > .portlet-title > .tools > a.config {
+    background-image: url(../img/portlet-config-icon-white.png); }
+.portlet.solid.cwd-secondary > .portlet-title > .tools > a.reload {
+    background-image: url(../img/portlet-reload-icon-white.png); }
+.portlet.solid.cwd-secondary > .portlet-title > .tools > a.expand {
+    background-image: url(../img/portlet-expand-icon-white.png); }
+.portlet.solid.cwd-secondary > .portlet-title > .tools > a.collapse {
+    background-image: url(../img/portlet-collapse-icon-white.png); }
+.portlet.solid.cwd-secondary > .portlet-title > .tools > a.fullscreen {
+    color: #fdfdfd; }
+
+.portlet.box.cwd-secondary {
+    border: 1px solid #66da00;
+    border-top: 0; }
+.portlet.box.cwd-secondary > .portlet-title {
+    background-color: #4ea700; }
+.portlet.box.cwd-secondary > .portlet-title > .caption {
+    color: #000000; }
+.portlet.box.cwd-secondary > .portlet-title > .caption > i {
+    color: #000000; }
+.portlet.box.cwd-secondary > .portlet-title > .actions .btn-default {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid #84ff18;
+    color: #92ff32; }
+.portlet.box.cwd-secondary > .portlet-title > .actions .btn-default > i {
+    color: #9aff41; }
+.portlet.box.cwd-secondary > .portlet-title > .actions .btn-default:hover, .portlet.box.cwd-secondary > .portlet-title > .actions .btn-default:focus, .portlet.box.cwd-secondary > .portlet-title > .actions .btn-default:active, .portlet.box.cwd-secondary > .portlet-title > .actions .btn-default.active {
+    border: 1px solid #9fff4b;
+    color: #adff65; }
+
+/* Statistic Block */
+.dashboard-stat.cwd-secondary {
+    background-color: #4ea700; }
+.dashboard-stat.cwd-secondary.dashboard-stat-light:hover {
+    background-color: #449300; }
+.dashboard-stat.cwd-secondary .visual > i {
+    color: #000000;
+    opacity: 0.1;
+    filter: alpha(opacity=10); }
+.dashboard-stat.cwd-secondary .details .number {
+    color: #000000; }
+.dashboard-stat.cwd-secondary .details .desc {
+    color: #000000;
+    opacity: 1;
+    filter: alpha(opacity=100); }
+.dashboard-stat.cwd-secondary .more {
+    color: #000000;
+    background-color: #449300; }
+
+/* General Element */
+.bg-cwd-secondary {
+    border-color: #4ea700 !important;
+    background-image: none !important;
+    background-color: #4ea700 !important;
+    color: #000000 !important; }
+
+/* General Text & Icon Font Colors */
+.font-cwd-secondary {
+    color: #4ea700 !important; }
+
+.progress-bar.cwd-secondary {
+    background: #4ea700 !important;
+    color: #000000 !important; }
