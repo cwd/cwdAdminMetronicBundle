@@ -31,7 +31,9 @@
     %}
     <link rel="stylesheet" href="{{  asset_url }}" />
     {% endstylesheets %}
+    {% if themeStyle is defined %}
     <link rel="stylesheet" href="{{ asset("bundles/cwdadminmetronic/assets/admin/layout4/css/themes/#{ themeStyle|default('default') }.css") }}" />
+    {% endif %}
 
     {% block stylesheets %}{% endblock %}
 
